@@ -8,6 +8,7 @@ namespace DebtSnowball
         public string Date { get; set; }
         public string Name { get; set; }
         public double Payment { get; set; }
+        public double ExtraPaid { get; set; }
         public double Principal { get; set; }
         public double Intrest { get; set; }
         public double Balance { get; set; }

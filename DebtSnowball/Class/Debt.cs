@@ -12,6 +12,8 @@ namespace DebtSnowball
         public double Payment { get; set; }
         public double OriginalBalance { get; set; }
 
+        public DateTime FirstPaymentDate { get; set; }
+
         public bool Enabled { get; set; }
 
         public List<ExtraPayment> ExtraPayments;
@@ -21,7 +23,7 @@ namespace DebtSnowball
             ExtraPayments = new List<ExtraPayment>();
         }
 
-        public Debt(string name, double balance, double intrestrate, double payment)
+        public Debt(string name, double balance, double intrestrate, double payment, DateTime firstPaymentDate)
         {
             ExtraPayments = new List<ExtraPayment>();
             Name = name;
@@ -29,6 +31,7 @@ namespace DebtSnowball
             OriginalBalance = balance;
             IntrestRate = intrestrate;
             Payment = payment;
+            FirstPaymentDate = firstPaymentDate;
             Enabled = true;
         }
 

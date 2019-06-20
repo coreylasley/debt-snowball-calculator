@@ -47,11 +47,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.ddlTerms = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.dtpFirstPaymentDate = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtBalance
             // 
-            this.txtBalance.Location = new System.Drawing.Point(308, 47);
+            this.txtBalance.Location = new System.Drawing.Point(308, 29);
             this.txtBalance.Name = "txtBalance";
             this.txtBalance.Size = new System.Drawing.Size(56, 20);
             this.txtBalance.TabIndex = 32;
@@ -60,7 +62,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(295, 50);
+            this.label17.Location = new System.Drawing.Point(295, 32);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(13, 13);
             this.label17.TabIndex = 42;
@@ -68,7 +70,7 @@
             // 
             // txtPayment
             // 
-            this.txtPayment.Location = new System.Drawing.Point(432, 48);
+            this.txtPayment.Location = new System.Drawing.Point(432, 30);
             this.txtPayment.Name = "txtPayment";
             this.txtPayment.Size = new System.Drawing.Size(62, 20);
             this.txtPayment.TabIndex = 31;
@@ -77,7 +79,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(421, 51);
+            this.label16.Location = new System.Drawing.Point(421, 33);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(13, 13);
             this.label16.TabIndex = 41;
@@ -85,7 +87,7 @@
             // 
             // txtRate
             // 
-            this.txtRate.Location = new System.Drawing.Point(225, 48);
+            this.txtRate.Location = new System.Drawing.Point(225, 30);
             this.txtRate.Name = "txtRate";
             this.txtRate.Size = new System.Drawing.Size(50, 20);
             this.txtRate.TabIndex = 30;
@@ -94,7 +96,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 32);
+            this.label5.Location = new System.Drawing.Point(9, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 39;
@@ -103,7 +105,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(429, 34);
+            this.label2.Location = new System.Drawing.Point(429, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 35;
@@ -112,17 +114,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(305, 34);
+            this.label1.Location = new System.Drawing.Point(305, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 34;
-            this.label1.Text = "Balance:";
+            this.label1.Text = "Original Balance:";
             // 
             // lblToLow
             // 
             this.lblToLow.AutoSize = true;
             this.lblToLow.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblToLow.Location = new System.Drawing.Point(9, 164);
+            this.lblToLow.Location = new System.Drawing.Point(9, 172);
             this.lblToLow.Name = "lblToLow";
             this.lblToLow.Size = new System.Drawing.Size(45, 13);
             this.lblToLow.TabIndex = 40;
@@ -132,7 +134,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(222, 34);
+            this.label3.Location = new System.Drawing.Point(222, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 36;
@@ -141,7 +143,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(274, 51);
+            this.label4.Location = new System.Drawing.Point(274, 33);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(15, 13);
             this.label4.TabIndex = 37;
@@ -159,14 +161,14 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(12, 47);
+            this.txtName.Location = new System.Drawing.Point(12, 29);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(200, 20);
             this.txtName.TabIndex = 38;
             // 
             // btnCalculateMinPayment
             // 
-            this.btnCalculateMinPayment.Location = new System.Drawing.Point(228, 94);
+            this.btnCalculateMinPayment.Location = new System.Drawing.Point(233, 114);
             this.btnCalculateMinPayment.Name = "btnCalculateMinPayment";
             this.btnCalculateMinPayment.Size = new System.Drawing.Size(189, 25);
             this.btnCalculateMinPayment.TabIndex = 43;
@@ -186,7 +188,7 @@
             // 
             // txtLoanTermsValue
             // 
-            this.txtLoanTermsValue.Location = new System.Drawing.Point(119, 96);
+            this.txtLoanTermsValue.Location = new System.Drawing.Point(124, 116);
             this.txtLoanTermsValue.Name = "txtLoanTermsValue";
             this.txtLoanTermsValue.Size = new System.Drawing.Size(33, 20);
             this.txtLoanTermsValue.TabIndex = 45;
@@ -195,7 +197,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(116, 82);
+            this.label6.Location = new System.Drawing.Point(121, 102);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 13);
             this.label6.TabIndex = 46;
@@ -208,7 +210,7 @@
             this.ddlTerms.Items.AddRange(new object[] {
             "Months",
             "Years"});
-            this.ddlTerms.Location = new System.Drawing.Point(153, 96);
+            this.ddlTerms.Location = new System.Drawing.Point(158, 116);
             this.ddlTerms.Name = "ddlTerms";
             this.ddlTerms.Size = new System.Drawing.Size(73, 21);
             this.ddlTerms.TabIndex = 47;
@@ -216,11 +218,27 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 99);
+            this.label7.Location = new System.Drawing.Point(17, 119);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(101, 13);
             this.label7.TabIndex = 48;
             this.label7.Text = "Payment Calculator:";
+            // 
+            // dtpFirstPaymentDate
+            // 
+            this.dtpFirstPaymentDate.Location = new System.Drawing.Point(225, 75);
+            this.dtpFirstPaymentDate.Name = "dtpFirstPaymentDate";
+            this.dtpFirstPaymentDate.Size = new System.Drawing.Size(269, 20);
+            this.dtpFirstPaymentDate.TabIndex = 49;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(222, 59);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 13);
+            this.label8.TabIndex = 50;
+            this.label8.Text = "First Payment Date:";
             // 
             // frmDebt
             // 
@@ -228,6 +246,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 220);
             this.ControlBox = false;
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.dtpFirstPaymentDate);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.ddlTerms);
             this.Controls.Add(this.txtLoanTermsValue);
@@ -277,5 +297,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox ddlTerms;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dtpFirstPaymentDate;
+        private System.Windows.Forms.Label label8;
     }
 }

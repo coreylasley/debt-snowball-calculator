@@ -84,6 +84,25 @@ namespace DebtSnowball
             }
         }
 
+        public DateTime FirstPaymentDate
+        {
+            get
+            {
+                try
+                {
+                    return dtpFirstPaymentDate.Value;
+                }
+                catch
+                {
+                    return DateTime.Now;
+                }
+            }
+            set
+            {
+                dtpFirstPaymentDate.Value = value;
+            }
+        }
+
         public double LoanTermsValue
         {
             get
@@ -119,6 +138,7 @@ namespace DebtSnowball
             Balance = debt.Balance;
             IntrestRate = debt.IntrestRate;
             Payment = debt.Payment;
+            FirstPaymentDate = debt.FirstPaymentDate;
         }
 
         private void btnSave_Click(object sender, EventArgs e)

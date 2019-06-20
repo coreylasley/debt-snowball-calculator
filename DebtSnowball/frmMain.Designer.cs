@@ -57,6 +57,7 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.lblDebtFree = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvNonSnowball = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +65,6 @@
             this.debtsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCopySnowballPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.nonSnowballPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dgvNonSnowball = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.gvDebts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSnowball)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -78,8 +78,8 @@
             this.tabPage1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNonSnowball)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // calculate
@@ -169,7 +169,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1037, 250);
             this.panel1.TabIndex = 0;
-            
             // 
             // tabControl2
             // 
@@ -209,7 +208,7 @@
             // 
             this.txtExtraPayment.Location = new System.Drawing.Point(666, 131);
             this.txtExtraPayment.Name = "txtExtraPayment";
-            this.txtExtraPayment.Size = new System.Drawing.Size(100, 20);
+            this.txtExtraPayment.Size = new System.Drawing.Size(77, 20);
             this.txtExtraPayment.TabIndex = 22;
             this.txtExtraPayment.Text = "25";
             // 
@@ -224,7 +223,7 @@
             // 
             // btnDebtDown
             // 
-            this.btnDebtDown.Location = new System.Drawing.Point(572, 123);
+            this.btnDebtDown.Location = new System.Drawing.Point(572, 112);
             this.btnDebtDown.Name = "btnDebtDown";
             this.btnDebtDown.Size = new System.Drawing.Size(64, 23);
             this.btnDebtDown.TabIndex = 26;
@@ -234,7 +233,7 @@
             // 
             // btnDebtUp
             // 
-            this.btnDebtUp.Location = new System.Drawing.Point(572, 99);
+            this.btnDebtUp.Location = new System.Drawing.Point(572, 88);
             this.btnDebtUp.Name = "btnDebtUp";
             this.btnDebtUp.Size = new System.Drawing.Size(64, 23);
             this.btnDebtUp.TabIndex = 25;
@@ -295,7 +294,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(666, 58);
+            this.label7.Location = new System.Drawing.Point(746, 115);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 13);
             this.label7.TabIndex = 16;
@@ -303,9 +302,9 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(666, 77);
+            this.dateTimePicker1.Location = new System.Drawing.Point(749, 131);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(243, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(207, 20);
             this.dateTimePicker1.TabIndex = 15;
             // 
             // tabPage4
@@ -397,6 +396,25 @@
             this.tabPage2.Text = "Non-Snowball Plan";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // dgvNonSnowball
+            // 
+            this.dgvNonSnowball.AllowUserToAddRows = false;
+            this.dgvNonSnowball.AllowUserToDeleteRows = false;
+            this.dgvNonSnowball.AllowUserToResizeRows = false;
+            this.dgvNonSnowball.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvNonSnowball.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNonSnowball.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvNonSnowball.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvNonSnowball.Location = new System.Drawing.Point(3, 3);
+            this.dgvNonSnowball.Name = "dgvNonSnowball";
+            this.dgvNonSnowball.ReadOnly = true;
+            this.dgvNonSnowball.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvNonSnowball.RowHeadersVisible = false;
+            this.dgvNonSnowball.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvNonSnowball.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvNonSnowball.Size = new System.Drawing.Size(1017, 359);
+            this.dgvNonSnowball.TabIndex = 13;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -452,26 +470,7 @@
             this.nonSnowballPlanToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.nonSnowballPlanToolStripMenuItem.Text = "Non-Snowball Plan";
             // 
-            // dgvNonSnowball
-            // 
-            this.dgvNonSnowball.AllowUserToAddRows = false;
-            this.dgvNonSnowball.AllowUserToDeleteRows = false;
-            this.dgvNonSnowball.AllowUserToResizeRows = false;
-            this.dgvNonSnowball.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvNonSnowball.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNonSnowball.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvNonSnowball.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvNonSnowball.Location = new System.Drawing.Point(3, 3);
-            this.dgvNonSnowball.Name = "dgvNonSnowball";
-            this.dgvNonSnowball.ReadOnly = true;
-            this.dgvNonSnowball.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvNonSnowball.RowHeadersVisible = false;
-            this.dgvNonSnowball.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvNonSnowball.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNonSnowball.Size = new System.Drawing.Size(1017, 359);
-            this.dgvNonSnowball.TabIndex = 13;
-            // 
-            // Form1
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -481,7 +480,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "frmMain";
             this.Text = "Advanced Debt Snowball Calculator";
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvDebts)).EndInit();
@@ -500,9 +499,9 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNonSnowball)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNonSnowball)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

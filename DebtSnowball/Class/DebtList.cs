@@ -10,6 +10,13 @@ namespace DebtSnowball
     [Serializable]
     public class DebtList
     {
+
+        public enum SnowballApproaches
+        {
+            LowestBalanceFirst,
+            HighestInterestFirst
+        }
+
         public List<Debt> Debts { get; set; }
 
         public List<ExtraPayment> ExtraPayments { get; set; }
@@ -72,31 +79,49 @@ namespace DebtSnowball
             return ret;
         }
 
-        public List<DebtPayment> ProcessPlan(bool Snowball, double extraPayment)
+        public List<DebtPayment> ProcessPlan(bool Snowball, SnowballApproaches approach, double initialSnowballPayment, DateTime? initialSnowballStart = null)
         {
             DateTime cur = DateTime.Now;
             List<DebtPayment> DebtPayments = new List<DebtPayment>();
-                      
 
+            if (initialSnowballStart == null) initialSnowballStart = DateTime.Now;
             double TotalIntrest = 0;
-
+            
             foreach (Debt d in Debts)
             {
                 d.Balance = d.OriginalBalance;
+
+                if (d.FirstPaymentDate < cur) cur = d.FirstPaymentDate;
             }
 
             while (GetTotalBalance() > 0)
             {
-                double curExtra = extraPayment;
+                double curExtra = cur >= initialSnowballStart && Snowball ? initialSnowballPayment : 0;
 
-                foreach(ExtraPayment ep in ExtraPayments.Where(x => x.Enabled == true))
+                if (Snowball)
                 {
-                    curExtra = curExtra + ep.IsItTimeToApply(cur.Month, cur.Year);
+                    foreach (ExtraPayment ep in ExtraPayments.Where(x => x.Enabled == true))
+                    {
+                        curExtra = curExtra + ep.IsItTimeToApply(cur.Month, cur.Year);
+                    }
                 }
 
-                foreach (Debt d in Debts)
+                List<Debt> debtOrder = new List<Debt>();
+                switch(approach)
                 {
-                    if (d.Balance > 0 && d.Enabled)
+                    case SnowballApproaches.LowestBalanceFirst:
+                        debtOrder = Debts.OrderBy(x => x.OriginalBalance).ToList();
+                        break;
+                    case SnowballApproaches.HighestInterestFirst:
+                        debtOrder = Debts.OrderByDescending(x => x.IntrestRate).ToList();
+                        break;
+                }
+
+
+                foreach (Debt d in debtOrder)
+                {
+                    
+                    if (d.Balance > 0 && d.Enabled && cur >= d.FirstPaymentDate)
                     {
                         double extra = 0;
 
@@ -120,6 +145,7 @@ namespace DebtSnowball
                         dp.Balance = Math.Round(pr.NewBalance, 2);
                         dp.Name = d.Name;
                         dp.Payment = Math.Round(d.Payment + extra, 2);
+                        dp.ExtraPaid = extra;
                         dp.Principal = Math.Round(pr.Principal, 2);
                         dp.TotalBalance = Math.Round(GetTotalBalance(), 2);
                         dp.TotalInterestPaid = Math.Round(TotalIntrest, 2);
@@ -139,7 +165,8 @@ namespace DebtSnowball
                                     if (dm.Enabled && dm.Balance < snowballTo.Balance && dm.Balance > 0) snowballTo = dm;
                                 }
 
-                                snowballTo.Payment += d.Payment;
+                                initialSnowballPayment += d.Payment;
+                                //snowballTo.Payment += d.Payment;
                             }
                         }
 

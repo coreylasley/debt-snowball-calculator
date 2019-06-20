@@ -101,17 +101,20 @@ namespace DebtSnowball
             {
                 switch (value)
                 {
-                    case ExtraPayment.Frequecy.Daily:
+                    case ExtraPayment.Frequecy.Once:
                         ddlFrequency.SelectedIndex = 0;
                         break;
-                    case ExtraPayment.Frequecy.Weekly:
+                    case ExtraPayment.Frequecy.Daily:
                         ddlFrequency.SelectedIndex = 1;
                         break;
-                    case ExtraPayment.Frequecy.Monthly:
+                    case ExtraPayment.Frequecy.Weekly:
                         ddlFrequency.SelectedIndex = 2;
                         break;
-                    case ExtraPayment.Frequecy.Annualy:
+                    case ExtraPayment.Frequecy.Monthly:
                         ddlFrequency.SelectedIndex = 3;
+                        break;
+                    case ExtraPayment.Frequecy.Annualy:
+                        ddlFrequency.SelectedIndex = 4;
                         break;
                 }
                 

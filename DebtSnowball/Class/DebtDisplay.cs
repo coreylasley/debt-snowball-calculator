@@ -11,6 +11,9 @@ namespace DebtSnowball
         public string Payment { get; set; }
         [DisplayName("Original Balance")]
         public string OriginalBalance { get; set; }
+
+        [DisplayName("First Payment Date")]
+        public string FirstPaymentDate { get; set; }
         public bool Enabled { get; set; }
 
         public DebtDisplay(Debt d)
@@ -20,6 +23,7 @@ namespace DebtSnowball
             IntrestRate = d.IntrestRate.ToString() + "%";
             Payment = d.Payment.ToString("C2");
             OriginalBalance = d.OriginalBalance.ToString("C2");
+            FirstPaymentDate = d.FirstPaymentDate.ToShortDateString();
             Enabled = d.Enabled; 
         }
     }

@@ -24,6 +24,7 @@ namespace DebtSnowball
         private void frmMain_Load(object sender, EventArgs e)
         {
             debtList = new DebtList();
+            comboBox1.SelectedIndex = 0;
 
             path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\debtsnowball.xml";
             if (File.Exists(path))
@@ -41,7 +42,7 @@ namespace DebtSnowball
             d.ShowDialog();
             if (d.Value == DialogResult.OK)
             {
-                Debt debt = new Debt(d.DebtName, d.Balance, d.IntrestRate, d.Payment);
+                Debt debt = new Debt(d.DebtName, d.Balance, d.IntrestRate, d.Payment, d.FirstPaymentDate);
                 debtList.Debts.Add(debt);
 
                 DebtList.Save(debtList, path);
@@ -83,23 +84,27 @@ namespace DebtSnowball
 
                 gvSnowball.DataSource = null;
                 List<DebtPaymentDisplay> dpds = new List<DebtPaymentDisplay>();
-                foreach (DebtPayment dp in debtList.ProcessPlan(true, Convert.ToDouble(txtExtraPayment.Text)))
+
+                DebtList.SnowballApproaches sa = DebtList.SnowballApproaches.LowestBalanceFirst;
+                if (comboBox1.SelectedIndex == 2) sa = DebtList.SnowballApproaches.HighestInterestFirst;
+
+                foreach (DebtPayment dp in debtList.ProcessPlan(true, sa, Convert.ToDouble(txtExtraPayment.Text), dateTimePicker1.Value))
                 {
                     dpds.Add(new DebtPaymentDisplay(dp));
                 }
                 gvSnowball.DataSource = dpds;
                 gvSnowball.FirstDisplayedScrollingRowIndex = gvSnowball.RowCount - 1;
                 
-                /*
+                /* --------------------- */
                 dgvNonSnowball.DataSource = null;
                 List<DebtPaymentDisplay> dpds2 = new List<DebtPaymentDisplay>();
-                foreach (DebtPayment dp in debtList.ProcessPlan(false, Convert.ToDouble(txtExtraPayment.Text)))
+                foreach (DebtPayment dp in debtList.ProcessPlan(false, sa, Convert.ToDouble(txtExtraPayment.Text)))
                 {
                     dpds2.Add(new DebtPaymentDisplay(dp));
                 }
                 dgvNonSnowball.DataSource = dpds2;
                 dgvNonSnowball.FirstDisplayedScrollingRowIndex = dgvNonSnowball.RowCount - 1;
-                */
+                /* -----------------------*/
                                
                 debtList = DebtList.Load(path);
                 gvDebts.DataSource = null;
@@ -176,6 +181,7 @@ namespace DebtSnowball
                 ep.Recurring = f.Recurring;
                 ep.StartDate = f.StartDate;
                 ep.StopDate = f.StopDate;
+                ep.IndefiniteStopDate = f.IndefiniteStopDate;
 
                 debtList.ExtraPayments.Add(ep);
 
@@ -360,6 +366,7 @@ namespace DebtSnowball
                 ep.Recurring = f.Recurring;
                 ep.StartDate = f.StartDate;
                 ep.StopDate = f.StopDate;
+                ep.IndefiniteStopDate = f.IndefiniteStopDate;
 
                 debtList.ExtraPayments[e.RowIndex] = ep;
 
@@ -376,7 +383,7 @@ namespace DebtSnowball
             d.ShowDialog();
             if (d.Value == DialogResult.OK)
             {
-                Debt debt = new Debt(d.DebtName, d.Balance, d.IntrestRate, d.Payment);
+                Debt debt = new Debt(d.DebtName, d.Balance, d.IntrestRate, d.Payment, d.FirstPaymentDate);
                 debtList.Debts[e.RowIndex] = debt;
 
                 DebtList.Save(debtList, path);
