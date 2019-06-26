@@ -79,7 +79,14 @@ namespace DebtSnowball
                             lastApplyYear = CurrentYear;
                         }
                         break;
+                    
+
                 }
+            }
+
+            if (Recurring == Frequecy.Once && StartDate.Month == currentMonth && StartDate.Year == CurrentYear)
+            {
+                ret = Amount;
             }
 
             return ret;
