@@ -22,6 +22,9 @@ namespace DebtSnowball
 
         public List<ExtraPayment> ExtraPayments { get; set; }
 
+        public double InitialSnowball { get; set; }
+        public DateTime InitialSnowballStart { get; set; }
+
         public DebtList()
         {
             Debts = new List<Debt>();

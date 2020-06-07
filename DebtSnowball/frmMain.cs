@@ -79,6 +79,13 @@ namespace DebtSnowball
         {
             try
             {
+                try
+                {
+                    txtExtraPayment.Text = debtList.InitialSnowball.ToString();
+                    dateTimePicker1.Value = debtList.InitialSnowballStart;
+                }
+                catch { }
+
                 gvDebts.DataSource = null;
                 gvDebts.DataSource = debtList.Debts;
 
@@ -165,6 +172,10 @@ namespace DebtSnowball
 
         private void btnCalculatePlan_Click(object sender, EventArgs e)
         {
+            debtList.InitialSnowball = Convert.ToDouble(txtExtraPayment.Text);
+            debtList.InitialSnowballStart = dateTimePicker1.Value;
+            DebtList.Save(debtList, path);
+
             RefreshData();
         }
 
