@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Xml.Serialization;
 using System.Linq;
+using System.Diagnostics;
 
 namespace DebtSnowball
 {
@@ -81,6 +82,8 @@ namespace DebtSnowball
 
         public List<DebtPayment> ProcessPlan(bool Snowball, SnowballApproaches approach, double initialSnowballPayment, DateTime? initialSnowballStart = null)
         {
+            DateTime startProcess = DateTime.Now;
+
             DateTime cur = DateTime.Now;
             List<DebtPayment> DebtPayments = new List<DebtPayment>();
 
@@ -192,7 +195,11 @@ namespace DebtSnowball
                 DebtPayments[x].TotalMonthlyInterest = acInterest.GetMonthAccumulation(DebtPayments[x].Date);
                 DebtPayments[x].TotalMonthlyPrincipal = acPrincipal.GetMonthAccumulation(DebtPayments[x].Date);
             }
-                        
+
+
+            TimeSpan finishedProcess = DateTime.Now - startProcess;
+            Debug.WriteLine($"Process Took: {finishedProcess.TotalSeconds} seconds");
+
             return DebtPayments;
         }
 

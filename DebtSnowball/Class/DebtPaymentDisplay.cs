@@ -7,9 +7,11 @@ namespace DebtSnowball
         public string Date { get; set; }
         public string Name { get; set; }
         public string Payment { get; set; }
-        [DisplayName("Snowball")]
+        [DisplayName("Snowball Amount Applied")]
         public string ExtraPaid { get; set; }
+        [DisplayName("Principal Paid")]
         public string Principal { get; set; }
+        [DisplayName("Interest Paid")]
         public string Intrest { get; set; }
         public string Balance { get; set; }
         [DisplayName("Total Interest Paid")]
@@ -26,7 +28,7 @@ namespace DebtSnowball
             Date = dp.Date;
             Name = dp.Name;
             Payment = dp.Payment.ToString("C2");
-            ExtraPaid = dp.ExtraPaid.ToString("C2");
+            ExtraPaid = dp.ExtraPaid > 0 ? dp.ExtraPaid.ToString("C2") : "";
             Principal = dp.Principal.ToString("C2");
             Intrest = dp.Intrest.ToString("C2");
             Balance = dp.Balance.ToString("C2");

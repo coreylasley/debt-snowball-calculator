@@ -52,7 +52,8 @@ namespace DebtSnowball
 
             DateTime dt = new DateTime(CurrentYear, currentMonth, 1);
             DateTime lt = new DateTime(lastApplyYear, lastApplyMonth, 1);
-            if (lastApplyMonth <= currentMonth && lastApplyYear <= CurrentYear)
+            //if (lastApplyMonth <= currentMonth && lastApplyYear <= CurrentYear)
+            if (dt > lt)
             {
                 switch (Recurring)
                 {
