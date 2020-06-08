@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDebt));
             this.txtBalance = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtPayment = new System.Windows.Forms.TextBox();
@@ -49,13 +50,20 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dtpFirstPaymentDate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDebtDelete = new System.Windows.Forms.Button();
+            this.calculate = new System.Windows.Forms.Button();
+            this.gvDebts = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDebts)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBalance
             // 
             this.txtBalance.Location = new System.Drawing.Point(308, 29);
             this.txtBalance.Name = "txtBalance";
-            this.txtBalance.Size = new System.Drawing.Size(56, 20);
+            this.txtBalance.Size = new System.Drawing.Size(97, 20);
             this.txtBalance.TabIndex = 32;
             this.txtBalance.Text = "5000";
             // 
@@ -124,7 +132,7 @@
             // 
             this.lblToLow.AutoSize = true;
             this.lblToLow.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblToLow.Location = new System.Drawing.Point(9, 172);
+            this.lblToLow.Location = new System.Drawing.Point(17, 152);
             this.lblToLow.Name = "lblToLow";
             this.lblToLow.Size = new System.Drawing.Size(45, 13);
             this.lblToLow.TabIndex = 40;
@@ -151,9 +159,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(365, 185);
+            this.btnSave.Location = new System.Drawing.Point(419, 351);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(75, 33);
             this.btnSave.TabIndex = 33;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -168,7 +176,7 @@
             // 
             // btnCalculateMinPayment
             // 
-            this.btnCalculateMinPayment.Location = new System.Drawing.Point(233, 114);
+            this.btnCalculateMinPayment.Location = new System.Drawing.Point(264, 113);
             this.btnCalculateMinPayment.Name = "btnCalculateMinPayment";
             this.btnCalculateMinPayment.Size = new System.Drawing.Size(189, 25);
             this.btnCalculateMinPayment.TabIndex = 43;
@@ -178,9 +186,9 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(447, 185);
+            this.btnCancel.Location = new System.Drawing.Point(498, 351);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(75, 33);
             this.btnCancel.TabIndex = 44;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -212,7 +220,7 @@
             "Years"});
             this.ddlTerms.Location = new System.Drawing.Point(158, 116);
             this.ddlTerms.Name = "ddlTerms";
-            this.ddlTerms.Size = new System.Drawing.Size(73, 21);
+            this.ddlTerms.Size = new System.Drawing.Size(100, 21);
             this.ddlTerms.TabIndex = 47;
             // 
             // label7
@@ -240,12 +248,71 @@
             this.label8.TabIndex = 50;
             this.label8.Text = "First Payment Date:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.gvDebts);
+            this.groupBox1.Controls.Add(this.btnDebtDelete);
+            this.groupBox1.Controls.Add(this.calculate);
+            this.groupBox1.Location = new System.Drawing.Point(15, 183);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(558, 150);
+            this.groupBox1.TabIndex = 51;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Refinance";
+            // 
+            // btnDebtDelete
+            // 
+            this.btnDebtDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDebtDelete.Image")));
+            this.btnDebtDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDebtDelete.Location = new System.Drawing.Point(481, 105);
+            this.btnDebtDelete.Name = "btnDebtDelete";
+            this.btnDebtDelete.Size = new System.Drawing.Size(64, 28);
+            this.btnDebtDelete.TabIndex = 26;
+            this.btnDebtDelete.Text = "      Delete";
+            this.btnDebtDelete.UseVisualStyleBackColor = true;
+            // 
+            // calculate
+            // 
+            this.calculate.Image = ((System.Drawing.Image)(resources.GetObject("calculate.Image")));
+            this.calculate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.calculate.Location = new System.Drawing.Point(481, 19);
+            this.calculate.Name = "calculate";
+            this.calculate.Size = new System.Drawing.Size(64, 30);
+            this.calculate.TabIndex = 25;
+            this.calculate.Text = "    Add";
+            this.calculate.UseVisualStyleBackColor = true;
+            // 
+            // gvDebts
+            // 
+            this.gvDebts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.gvDebts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvDebts.Location = new System.Drawing.Point(7, 19);
+            this.gvDebts.Name = "gvDebts";
+            this.gvDebts.RowHeadersVisible = false;
+            this.gvDebts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvDebts.Size = new System.Drawing.Size(468, 114);
+            this.gvDebts.TabIndex = 27;
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(202, 351);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(190, 33);
+            this.button1.TabIndex = 52;
+            this.button1.Text = "  How will this impact me?";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmDebt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 220);
+            this.ClientSize = new System.Drawing.Size(584, 397);
             this.ControlBox = false;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dtpFirstPaymentDate);
             this.Controls.Add(this.label7);
@@ -271,6 +338,8 @@
             this.Name = "frmDebt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit Debt";
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gvDebts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,5 +368,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpFirstPaymentDate;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnDebtDelete;
+        private System.Windows.Forms.Button calculate;
+        private System.Windows.Forms.DataGridView gvDebts;
+        private System.Windows.Forms.Button button1;
     }
 }

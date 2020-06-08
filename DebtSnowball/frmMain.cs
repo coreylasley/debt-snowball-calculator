@@ -92,8 +92,15 @@ namespace DebtSnowball
                 gvSnowball.DataSource = null;
                 List<DebtPaymentDisplay> dpds = new List<DebtPaymentDisplay>();
 
-                DebtList.SnowballApproaches sa = DebtList.SnowballApproaches.LowestBalanceFirst;
-                if (comboBox1.SelectedIndex == 2) sa = DebtList.SnowballApproaches.HighestInterestFirst;
+                DebtList.SnowballApproaches sa = DebtList.SnowballApproaches.MyOrder;
+                switch(comboBox1.SelectedIndex)
+                {
+                    case 1: sa = DebtList.SnowballApproaches.LowestBalanceFirst;
+                        break;
+                    case 2: sa = DebtList.SnowballApproaches.HighestInterestFirst;
+                        break;
+                }
+                              
 
                 foreach (DebtPayment dp in debtList.ProcessPlan(true, sa, Convert.ToDouble(txtExtraPayment.Text), dateTimePicker1.Value))
                 {

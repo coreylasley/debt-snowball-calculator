@@ -65,6 +65,7 @@
             this.debtsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCopySnowballPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.nonSnowballPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvDebts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSnowball)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -84,11 +85,13 @@
             // 
             // calculate
             // 
+            this.calculate.Image = ((System.Drawing.Image)(resources.GetObject("calculate.Image")));
+            this.calculate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.calculate.Location = new System.Drawing.Point(572, 17);
             this.calculate.Name = "calculate";
-            this.calculate.Size = new System.Drawing.Size(64, 23);
+            this.calculate.Size = new System.Drawing.Size(64, 30);
             this.calculate.TabIndex = 4;
-            this.calculate.Text = "Add";
+            this.calculate.Text = "    Add";
             this.calculate.UseVisualStyleBackColor = true;
             this.calculate.Click += new System.EventHandler(this.calculate_Click);
             // 
@@ -183,6 +186,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label1);
             this.tabPage3.Controls.Add(this.txtExtraPayment);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.btnDebtDown);
@@ -206,7 +210,7 @@
             // 
             // txtExtraPayment
             // 
-            this.txtExtraPayment.Location = new System.Drawing.Point(666, 131);
+            this.txtExtraPayment.Location = new System.Drawing.Point(667, 31);
             this.txtExtraPayment.Name = "txtExtraPayment";
             this.txtExtraPayment.Size = new System.Drawing.Size(77, 20);
             this.txtExtraPayment.TabIndex = 22;
@@ -215,7 +219,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(654, 134);
+            this.label15.Location = new System.Drawing.Point(655, 34);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(13, 13);
             this.label15.TabIndex = 27;
@@ -223,38 +227,44 @@
             // 
             // btnDebtDown
             // 
+            this.btnDebtDown.Image = ((System.Drawing.Image)(resources.GetObject("btnDebtDown.Image")));
+            this.btnDebtDown.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDebtDown.Location = new System.Drawing.Point(572, 112);
             this.btnDebtDown.Name = "btnDebtDown";
-            this.btnDebtDown.Size = new System.Drawing.Size(64, 23);
+            this.btnDebtDown.Size = new System.Drawing.Size(64, 28);
             this.btnDebtDown.TabIndex = 26;
-            this.btnDebtDown.Text = "Down";
+            this.btnDebtDown.Text = "    Down";
             this.btnDebtDown.UseVisualStyleBackColor = true;
             this.btnDebtDown.Click += new System.EventHandler(this.btnDebtDown_Click);
             // 
             // btnDebtUp
             // 
-            this.btnDebtUp.Location = new System.Drawing.Point(572, 88);
+            this.btnDebtUp.Image = ((System.Drawing.Image)(resources.GetObject("btnDebtUp.Image")));
+            this.btnDebtUp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDebtUp.Location = new System.Drawing.Point(572, 83);
             this.btnDebtUp.Name = "btnDebtUp";
-            this.btnDebtUp.Size = new System.Drawing.Size(64, 23);
+            this.btnDebtUp.Size = new System.Drawing.Size(64, 28);
             this.btnDebtUp.TabIndex = 25;
-            this.btnDebtUp.Text = "Up";
+            this.btnDebtUp.Text = "    Up";
             this.btnDebtUp.UseVisualStyleBackColor = true;
             this.btnDebtUp.Click += new System.EventHandler(this.btnDebtUp_Click);
             // 
             // btnDebtDelete
             // 
-            this.btnDebtDelete.Location = new System.Drawing.Point(572, 183);
+            this.btnDebtDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDebtDelete.Image")));
+            this.btnDebtDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDebtDelete.Location = new System.Drawing.Point(572, 177);
             this.btnDebtDelete.Name = "btnDebtDelete";
-            this.btnDebtDelete.Size = new System.Drawing.Size(64, 23);
+            this.btnDebtDelete.Size = new System.Drawing.Size(64, 28);
             this.btnDebtDelete.TabIndex = 24;
-            this.btnDebtDelete.Text = "Delete";
+            this.btnDebtDelete.Text = "      Delete";
             this.btnDebtDelete.UseVisualStyleBackColor = true;
             this.btnDebtDelete.Click += new System.EventHandler(this.btnDebtDelete_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(663, 115);
+            this.label8.Location = new System.Drawing.Point(664, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 13);
             this.label8.TabIndex = 23;
@@ -262,18 +272,20 @@
             // 
             // btnCalculatePlan
             // 
-            this.btnCalculatePlan.Location = new System.Drawing.Point(818, 178);
+            this.btnCalculatePlan.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculatePlan.Image")));
+            this.btnCalculatePlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalculatePlan.Location = new System.Drawing.Point(883, 177);
             this.btnCalculatePlan.Name = "btnCalculatePlan";
-            this.btnCalculatePlan.Size = new System.Drawing.Size(93, 29);
+            this.btnCalculatePlan.Size = new System.Drawing.Size(138, 41);
             this.btnCalculatePlan.TabIndex = 14;
-            this.btnCalculatePlan.Text = "Calculate Plan";
+            this.btnCalculatePlan.Text = "  Calculate Plan";
             this.btnCalculatePlan.UseVisualStyleBackColor = true;
             this.btnCalculatePlan.Click += new System.EventHandler(this.btnCalculatePlan_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(666, 165);
+            this.label6.Location = new System.Drawing.Point(664, 112);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 13);
             this.label6.TabIndex = 13;
@@ -284,9 +296,10 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "My Listed Order",
             "Lowest Balance",
             "Highest Interest Rate"});
-            this.comboBox1.Location = new System.Drawing.Point(666, 181);
+            this.comboBox1.Location = new System.Drawing.Point(664, 128);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(147, 21);
             this.comboBox1.TabIndex = 12;
@@ -294,7 +307,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(746, 115);
+            this.label7.Location = new System.Drawing.Point(747, 15);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 13);
             this.label7.TabIndex = 16;
@@ -302,9 +315,9 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(749, 131);
+            this.dateTimePicker1.Location = new System.Drawing.Point(750, 31);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(207, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(231, 20);
             this.dateTimePicker1.TabIndex = 15;
             // 
             // tabPage4
@@ -448,7 +461,7 @@
             this.mnuCopySnowballPlan,
             this.nonSnowballPlanToolStripMenuItem});
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             // 
             // debtsToolStripMenuItem
@@ -469,6 +482,15 @@
             this.nonSnowballPlanToolStripMenuItem.Name = "nonSnowballPlanToolStripMenuItem";
             this.nonSnowballPlanToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.nonSnowballPlanToolStripMenuItem.Text = "Non-Snowball Plan";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(664, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(317, 13);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Additional extra payments can be set on the \"Extra Payments\" tab";
             // 
             // frmMain
             // 
@@ -544,6 +566,7 @@
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Label lblDebtFree;
         private System.Windows.Forms.DataGridView dgvNonSnowball;
+        private System.Windows.Forms.Label label1;
     }
 }
 

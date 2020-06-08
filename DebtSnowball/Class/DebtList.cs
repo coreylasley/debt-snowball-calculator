@@ -14,6 +14,7 @@ namespace DebtSnowball
 
         public enum SnowballApproaches
         {
+            MyOrder,
             LowestBalanceFirst,
             HighestInterestFirst
         }
@@ -115,6 +116,9 @@ namespace DebtSnowball
                 List<Debt> debtOrder = new List<Debt>();
                 switch(approach)
                 {
+                    case SnowballApproaches.MyOrder:
+                        debtOrder = Debts.ToList();
+                        break;
                     case SnowballApproaches.LowestBalanceFirst:
                         debtOrder = Debts.OrderBy(x => x.OriginalBalance).ToList();
                         break;
